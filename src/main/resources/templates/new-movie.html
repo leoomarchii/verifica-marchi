@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <title>Nuovo film</title>
+</head>
+<body>
+    <div class="col-3">
+        <div>
+            <h2>Nuovo film</h2>
+        </div>
+
+        <div>
+            <form th:method="post" th:action="@{/films/nuovo/handler}" th:object="${movieForm}">
+                <div>
+                    <label>Codice</label>
+                    <br>
+                    <input type="number" th:field="*{id}">
+                </div>
+                <div>
+                    <label>Nome</label>
+                    <br>
+                    <input type="text" th:field="*{name}">
+                </div>
+                <div>
+                    <label>Genere</label>
+                    <br>
+                    <input type="text" th:field="*{category}">
+                </div>
+                <div>
+                    <label>Anno</label>
+                    <br>
+                    <input type="number" th:field="*{year}">
+                </div>
+                <div>
+                    <label>Voto</label>
+                    <br>
+                    <input type="number" th:field="*{score}">
+                </div>
+                <br>
+                <div>
+                    <input class="btn btn-success" type="submit" value="Aggiungi film">
+                    <a class="btn btn-primary" th:href="@{/films}">Catalogo</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

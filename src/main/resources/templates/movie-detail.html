@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <title>Dettaglio del film</title>
+</head>
+<body>
+    <div class="col-3 my-2">
+        <div>
+            <h2><span th:text="${movie.name}"></span></h2>
+        </div>
+        <div>
+            <b>Codice: </b><span th:text="${movie.id}"></span>
+        </div>
+        <div>
+            <b>Genere: </b><span th:text="${movie.category}"></span>
+        </div>
+        <div>
+            <b>Anno: </b><span th:text="${movie.year}"></span>
+        </div>
+        <div>
+            <b>Voto: </b><span th:text="${movie.score}"></span>
+        </div>
+        <br>
+        <div>
+            <a class="btn btn-danger" th:href="@{'/films/elimina/'+${movie.id}}">Elimina</a>
+            <a class="btn btn-primary" th:href="@{/films}">Catalogo</a>
+        </div>
+    </div>
+</body>
+</html>
